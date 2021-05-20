@@ -7,23 +7,42 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, UITextViewDelegate {
 
     var memo: Memo?
     var memoListViewModel = MemoViewModel()
     
     @IBOutlet weak var detailTextView: UITextView!
+    @IBOutlet weak var doneButton: UIButton!
     
     @IBAction func backButtonClicked(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func doneButtonClicked(_ sender: Any) {
+        guard let content = detailTextView.text, content.isEmpty == false else { return }
+        
+        let memo = MemoManager.shared.createMemo(content: content, date: Date())
+        memoListViewModel.addMemo(memo)
+        detailTextView.text = ""
+
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         detailTextView.text = memo?.content
-
+        detailTextView.delegate = self
+        self.doneButton.isHidden = true
+        
         // Do any additional setup after loading the view.
+    }
+    
+    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
+        self.doneButton.isHidden = false
+        return true
     }
     
 

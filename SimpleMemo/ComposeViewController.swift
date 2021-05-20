@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ComposeViewController: UIViewController {
+class ComposeViewController: UIViewController, UITextViewDelegate {
     
     var memoListViewModel = MemoViewModel()
     

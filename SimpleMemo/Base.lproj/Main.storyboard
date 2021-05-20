@@ -216,9 +216,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="34F-4u-hxr">
-                                <rect key="frame" x="358" y="65" width="31" height="34"/>
+                                <rect key="frame" x="346" y="65" width="43" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Edit"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="doneButtonClicked:" destination="0Rp-6Z-BBB" eventType="touchUpInside" id="8m1-nI-6s6"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1oa-st-RRK"/>
@@ -240,6 +243,7 @@
                     <navigationItem key="navigationItem" id="ypB-si-nVR"/>
                     <connections>
                         <outlet property="detailTextView" destination="SNL-Z4-p2d" id="C4L-na-FbG"/>
+                        <outlet property="doneButton" destination="34F-4u-hxr" id="D45-PO-212"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2hW-kJ-hv3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
