@@ -54,11 +54,11 @@ class MemoManager {
     }
     
     func saveMemo() {
-        Storage.store(memos, to: .documents, as: "todos.json")
+        Storage.store(memos, to: .documents, as: "memos.json")
     }
     
     func retrieveMemo() {
-        memos = Storage.retrive("todos.json", from: .documents, as: [Memo].self) ?? []
+        memos = Storage.retrive("memos.json", from: .documents, as: [Memo].self) ?? []
         
         let lastId = memos.last?.id ?? 0
         MemoManager.lastId = lastId

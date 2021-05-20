@@ -10,6 +10,7 @@ import UIKit
 class MainViewControllerTableViewCell: UITableViewCell {
     
     @IBOutlet weak var tableViewLabel: UILabel!
+    @IBOutlet weak var tableViewDateLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
