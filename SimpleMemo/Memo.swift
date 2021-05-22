@@ -63,6 +63,14 @@ class MemoManager {
         let lastId = memos.last?.id ?? 0
         MemoManager.lastId = lastId
     }
+    
+    func swapMemo(_ sourceIndex : Int, _ targetIndex: Int) {
+        let temp = memos[sourceIndex]
+        let targetMemo = memos[targetIndex]
+        memos[sourceIndex].update(content: targetMemo.content, date: targetMemo.date)
+        memos[targetIndex].update(content: temp.content, date: temp.date)
+        saveMemo()
+    }
 }
 
 class MemoViewModel {
@@ -87,6 +95,10 @@ class MemoViewModel {
     
     func loadTasks() {
         manager.retrieveMemo()
+    }
+    
+    func swapMemo(_ sourceIndex: Int, _ targetIndex: Int) {
+        manager.swapMemo(sourceIndex, targetIndex)
     }
 }
 

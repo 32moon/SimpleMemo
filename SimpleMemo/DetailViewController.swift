@@ -22,9 +22,9 @@ class DetailViewController: UIViewController, UITextViewDelegate {
     @IBAction func doneButtonClicked(_ sender: Any) {
         guard let content = detailTextView.text, content.isEmpty == false else { return }
         
-        let memo = MemoManager.shared.createMemo(content: content, date: Date())
-        memoListViewModel.addMemo(memo)
-        detailTextView.text = ""
+        memo?.content = content
+        memo?.date = Date()
+        memoListViewModel.updateMemo(memo!)
 
         self.navigationController?.popViewController(animated: true)
     }
