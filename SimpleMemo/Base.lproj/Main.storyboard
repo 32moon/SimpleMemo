@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -159,14 +160,26 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FSJ-F8-SOu">
+                                <rect key="frame" x="305.5" y="71" width="30.5" height="22.5"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="camera.fill" catalog="system" symbolScale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="cameraButtonCliked:" destination="agV-Jq-UCR" eventType="touchUpInside" id="4Fn-m5-3Db"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="av0-Dh-ew5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Thn-Iu-iyW" firstAttribute="leading" secondItem="av0-Dh-ew5" secondAttribute="leading" constant="15" id="G4n-jR-rAO"/>
+                            <constraint firstItem="FSJ-F8-SOu" firstAttribute="centerY" secondItem="Lrx-uH-LkW" secondAttribute="centerY" id="Gsc-Uz-3ox"/>
                             <constraint firstItem="av0-Dh-ew5" firstAttribute="bottom" secondItem="UYI-8u-Unu" secondAttribute="bottom" id="JNe-ag-APk"/>
                             <constraint firstItem="UYI-8u-Unu" firstAttribute="top" secondItem="Thn-Iu-iyW" secondAttribute="bottom" constant="10" id="OQj-Wp-HFH"/>
                             <constraint firstItem="Thn-Iu-iyW" firstAttribute="top" secondItem="av0-Dh-ew5" secondAttribute="top" constant="65" id="d1j-dp-7hi"/>
+                            <constraint firstItem="Lrx-uH-LkW" firstAttribute="leading" secondItem="FSJ-F8-SOu" secondAttribute="trailing" constant="10" id="jxo-HB-jzk"/>
                             <constraint firstItem="av0-Dh-ew5" firstAttribute="trailing" secondItem="Thn-Iu-iyW" secondAttribute="trailing" constant="15" id="nCO-Ri-Bio"/>
                             <constraint firstItem="Thn-Iu-iyW" firstAttribute="top" secondItem="rLf-SE-u7w" secondAttribute="bottom" constant="10" id="qEj-9P-icb"/>
                             <constraint firstItem="av0-Dh-ew5" firstAttribute="trailing" secondItem="UYI-8u-Unu" secondAttribute="trailing" constant="10" id="rHI-LR-qDm"/>
@@ -250,6 +263,21 @@
             </objects>
             <point key="canvasLocation" x="1511.5942028985507" y="565.84821428571422"/>
         </scene>
+        <!--Text View Image View Controller-->
+        <scene sceneID="NWQ-KY-wf0">
+            <objects>
+                <viewController id="2dg-ay-wBh" customClass="textViewImageViewController" customModule="SimpleMemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1y0-hK-8mu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="oqb-3d-3Ud"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UPE-5a-Wlp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-781" y="-180"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="dWp-nk-6Kh">
             <objects>
@@ -270,6 +298,7 @@
     </scenes>
     <resources>
         <image name="addButton" width="76" height="76"/>
+        <image name="camera.fill" catalog="system" width="128" height="94"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
