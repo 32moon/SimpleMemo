@@ -52,13 +52,13 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="7hT-A8-Vgd">
                                                     <rect key="frame" x="20" y="7" width="374" height="41.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eia-3w-3ww">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eia-3w-3ww">
                                                             <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y45-rI-nGI">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y45-rI-nGI">
                                                             <rect key="frame" x="0.0" y="25.5" width="374" height="16"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <color key="textColor" systemColor="secondaryLabelColor"/>
@@ -236,16 +236,25 @@
                                     <action selector="doneButtonClicked:" destination="0Rp-6Z-BBB" eventType="touchUpInside" id="8m1-nI-6s6"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JJG-5W-y5P">
+                                <rect key="frame" x="302" y="71" width="19" height="22"/>
+                                <state key="normal" image="square.and.arrow.up" catalog="system"/>
+                                <connections>
+                                    <action selector="shareButtonClicked:" destination="0Rp-6Z-BBB" eventType="touchUpInside" id="sVQ-Rc-GvO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1oa-st-RRK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="9kk-iq-6dU" firstAttribute="leading" secondItem="1oa-st-RRK" secondAttribute="leading" constant="15" id="3Zb-2b-BPL"/>
+                            <constraint firstItem="JJG-5W-y5P" firstAttribute="centerY" secondItem="34F-4u-hxr" secondAttribute="centerY" id="8i5-ew-HQW"/>
                             <constraint firstItem="9kk-iq-6dU" firstAttribute="top" secondItem="1oa-st-RRK" secondAttribute="top" constant="65" id="GOs-1K-knB"/>
                             <constraint firstItem="SNL-Z4-p2d" firstAttribute="top" secondItem="9kk-iq-6dU" secondAttribute="bottom" constant="10" id="K8k-pL-mMX"/>
                             <constraint firstItem="1oa-st-RRK" firstAttribute="trailing" secondItem="SNL-Z4-p2d" secondAttribute="trailing" constant="10" id="UKG-IZ-fkA"/>
                             <constraint firstItem="1oa-st-RRK" firstAttribute="bottom" secondItem="SNL-Z4-p2d" secondAttribute="bottom" id="V0x-Iu-m3j"/>
                             <constraint firstItem="SNL-Z4-p2d" firstAttribute="leading" secondItem="1oa-st-RRK" secondAttribute="leading" constant="10" id="VeZ-j1-WvO"/>
+                            <constraint firstItem="34F-4u-hxr" firstAttribute="leading" secondItem="JJG-5W-y5P" secondAttribute="trailing" constant="25" id="WeL-pA-W2d"/>
                             <constraint firstItem="34F-4u-hxr" firstAttribute="bottom" secondItem="Opd-UA-SSE" secondAttribute="bottom" id="Xfk-QP-BnF"/>
                             <constraint firstItem="1oa-st-RRK" firstAttribute="trailing" secondItem="34F-4u-hxr" secondAttribute="trailing" constant="25" id="jvn-x3-ab4"/>
                             <constraint firstItem="Opd-UA-SSE" firstAttribute="leading" secondItem="1oa-st-RRK" secondAttribute="leading" constant="25" id="q2J-Ah-JO8"/>
@@ -257,6 +266,7 @@
                     <connections>
                         <outlet property="detailTextView" destination="SNL-Z4-p2d" id="C4L-na-FbG"/>
                         <outlet property="doneButton" destination="34F-4u-hxr" id="D45-PO-212"/>
+                        <outlet property="doneButtonTrailing" destination="jvn-x3-ab4" id="LfE-kX-bph"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2hW-kJ-hv3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -299,6 +309,7 @@
     <resources>
         <image name="addButton" width="76" height="76"/>
         <image name="camera.fill" catalog="system" width="128" height="94"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
