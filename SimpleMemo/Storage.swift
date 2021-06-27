@@ -7,6 +7,13 @@
 
 import Foundation
 
+// public 키워드로 접근수준이 지정된 요소는 어디서든 쓰일 수 있다.
+// 공개 접근수준은 주로 프레임워크에서 외부와 연결될 인터페이스를 구현하는데 많이 쓰인다
+
+// Swift 에서 Json 은 딕셔너리 형태로 이루어져있음
+
+// 파싱: Josn 데이터를 swift에 사용하기 적합한 형태로 변환하는 작업 -> Swift의 Codable
+
 public class Storage {
     
     private init() { }
@@ -28,9 +35,6 @@ public class Storage {
             return FileManager.default.urls(for: path, in: .userDomainMask).first!
         }
     }
-    
-    // TODO: Codable 설명, JSON 타입 설명
-    // TODO: Codable encode 설명
     // TODO: Data 타입은 파일 형태로 저장 가능
     
     static func store<T: Encodable>(_ obj: T, to directory: Directory, as fileName: String) {
